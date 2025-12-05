@@ -1,7 +1,5 @@
 #include "Book.h"
 
-#include <iostream>
-
 Book::Book(std::string title, std::string autor, int year, std::string isbn,
            bool isAvaible, std::string borrowedBy)
     : title(title),
@@ -16,17 +14,11 @@ Book::Book(std::string title, std::string autor, int year, std::string isbn,
 }
 
 // Getters
-std::string& Book::getTitle() { return title; };
 std::string Book::getTitle() const { return title; };
-std::string& Book::getAuthor() { return author; };
 std::string Book::getAuthor() const { return author; };
-int& Book::getYear() { return year; };
 int Book::getYear() const { return year; };
-std::string& Book::getIsbn() { return isbn; };
 std::string Book::getIsbn() const { return isbn; };
-bool& Book::getIsAvaible() { return isAvaible; };
 bool Book::getIsAvaible() const { return isAvaible; };
-std::string& Book::getBorrowedBy() { return borrowedBy; };
 std::string Book::getBorrowedBy() const { return borrowedBy; };
 
 void Book::borrowBook(const std::string& userName) {
