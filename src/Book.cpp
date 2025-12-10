@@ -1,6 +1,6 @@
 #include "Book.h"
 
-Book::Book(std::string title, std::string autor, int year, std::string isbn,
+Book::Book(std::string title, std::string author, int year, std::string isbn,
            bool isAvaible, std::string borrowedBy)
     : title(title),
       author(author),
@@ -10,7 +10,7 @@ Book::Book(std::string title, std::string autor, int year, std::string isbn,
       borrowedBy(borrowedBy) {
   if (year < 1450 || year > 2025)
     throw std::invalid_argument("Некорректный год издания у книги " + title +
-                                " автора " + autor);
+                                " автора " + author);
 }
 
 // Getters

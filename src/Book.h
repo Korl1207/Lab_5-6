@@ -12,7 +12,7 @@ class Book {
   std::string borrowedBy;
 
  public:
-  Book(std::string title, std::string autor, int year, std::string isbn,
+  Book(std::string title, std::string author, int year, std::string isbn,
        bool isAbaible, std::string borrowedBy);
   // Getters
   std::string getTitle() const;

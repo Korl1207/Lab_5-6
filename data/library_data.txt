@@ -1,0 +1,13 @@
+BOOK
+Title: Война и мир
+Author: Лев Толстой
+Year: 1869
+ISBN: 978-5-17-70490-8
+Available: yes
+BorrowedBy: 
+---USERS---
+USER
+Name: Иванов
+UserID: USR_001
+BorrowedBooks: 978-5-17-70490-8|978-3-16-148410-0
+MaxBooks: 3

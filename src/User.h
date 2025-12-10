@@ -12,7 +12,7 @@ class User {
 
  public:
   User(std::string name, std::string userId,
-       std::vector<std::string> borrowedBooks, int maxBooksAllowed = 3);
+       std::vector<std::string> borrowedBooks, int maxBooksAllowed);
 
   // Getters
   std::string getName() const;
