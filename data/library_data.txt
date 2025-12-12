@@ -1,13 +1,24 @@
 BOOK
-Title: Война и мир
-Author: Лев Толстой
-Year: 1869
-ISBN: 978-5-17-70490-8
-Available: yes
+Title: Преступление и наказание
+Author: Федор Достоевский
+Year: 1866
+ISBN: 978-5-17-77192-5
+Avaible: no
+BorrowedBy: Иванов
+
+BOOK
+Title: C++
+Author: Stanley Lippman
+Year: 2012
+ISBN: 978-0-13-110388-8
+Avaible: yes
 BorrowedBy: 
+
 ---USERS---
+
 USER
-Name: Иванов
-UserID: USR_001
-BorrowedBooks: 978-5-17-70490-8|978-3-16-148410-0
+Name: sdf
+UserID: USR_002
+BorrowedBooks: 
 MaxBooks: 3
+

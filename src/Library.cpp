@@ -114,7 +114,7 @@ void Library::saveToFile() {
     outputFile << "BorrowedBy: " << it->getBorrowedBy() << std::endl
                << std::endl;
   }
-  outputFile << "---USERS---" << std::endl;
+  outputFile << "---USERS---" << std::endl << std::endl;
   for (auto it = users.begin(); it != users.end(); ++it) {
     outputFile << "USER" << std::endl;
     outputFile << "Name: " << it->getName() << std::endl;
@@ -174,7 +174,8 @@ void Library::loadFromFile() {
   }
   while (std::getline(issUsers, buf)) {
     std::stringstream suser;
-    while (std::getline(issUsers, buf)) {
+    suser << buf << std::endl;
+    while (std::getline(issUsers, buf) && buf != "USER") {
       suser << buf << std::endl;
     }
     std::istringstream issuser(suser.str());
@@ -203,7 +204,7 @@ Book readBook(std::istringstream& sbook) {
   std::string title, author, strYear, isbn, strIsAvaible, BorrowedBy;
   std::string line;
   while (getline(sbook, line)) {
-    if (line.find("Title: ") == 0) {
+    if (line.find("Title:") == 0) {
       title = prefixDrop(line, "Title:");
     } else if (line.find("Author:") == 0) {
       author = prefixDrop(line, "Author:");
@@ -211,6 +212,8 @@ Book readBook(std::istringstream& sbook) {
       strYear = prefixDrop(line, "Year:");
     } else if (line.find("ISBN:") == 0) {
       isbn = prefixDrop(line, "ISBN:");
+    } else if (line.find("Avaible:") == 0) {
+      strIsAvaible = prefixDrop(line, "Avaible:");
     } else if (line.find("BorrowedBy:") == 0) {
       BorrowedBy = prefixDrop(line, "BorrowedBy:");
     }

@@ -22,8 +22,6 @@ bool Book::getIsAvaible() const { return isAvaible; };
 std::string Book::getBorrowedBy() const { return borrowedBy; };
 
 void Book::borrowBook(const std::string& userName) {
-  if (!isAvaible)
-    throw std::invalid_argument("Книга " + title + " не доступна для выдачи");
   this->isAvaible = false;
   this->borrowedBy = userName;
 }
@@ -38,11 +36,12 @@ void Book::returnBook() {
 }
 
 void Book::displayInfo() {
-  std::cout << "BOOK" << std::endl;
-  std::cout << "Title: " << title << std::endl;
-  std::cout << "Author: " << author << std::endl;
-  std::cout << "Year: " << year << std::endl;
+  std::cout << "=== КНИГА ===" << std::endl;
+  std::cout << "Название: " << title << std::endl;
+  std::cout << "Автор: " << author << std::endl;
+  std::cout << "год издания: " << year << std::endl;
   std::cout << "ISBN: " << isbn << std::endl;
-  std::cout << "Avaible: " << ((isAvaible) ? "yes" : "no") << std::endl;
-  std::cout << "BorrowedBy" << ((isAvaible) ? "" : borrowedBy) << std::endl;
+  std::cout << "Можно ли взять: " << ((isAvaible) ? "yes" : "no") << std::endl;
+  std::cout << "Кто взял: " << ((isAvaible) ? "" : borrowedBy) << std::endl
+            << std::endl;
 }

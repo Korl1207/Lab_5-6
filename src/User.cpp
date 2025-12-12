@@ -39,5 +39,6 @@ void User::displayProfile() {
       std::cout << borrowedBooks[i] << std::endl;
   }
   std::cout << "Максимум книг, которые может взять: " << maxBooksAllowed
+            << std::endl
             << std::endl;
 }
