@@ -17,12 +17,7 @@ int User::getMaxBooksAllowed() const { return maxBooksAllowed; }
 
 bool User::canBorrowMore() { return (maxBooksAllowed > borrowedBooks.size()); }
 
-void User::addBook(const std::string& isbn) {
-  if (!canBorrowMore()) {
-    throw std::runtime_error("Пользователь " + name + " не может взять книгу");
-  }
-  borrowedBooks.push_back(isbn);
-}
+void User::addBook(const std::string& isbn) { borrowedBooks.push_back(isbn); }
 
 void User::removeBook(const std::string isbn) {
   auto it = std::find(borrowedBooks.begin(), borrowedBooks.end(), isbn);
@@ -33,7 +28,7 @@ void User::removeBook(const std::string isbn) {
   throw std::runtime_error("У пользователя " + name + " нет книги " + isbn);
 }
 void User::displayProfile() {
-  std::cout << "=== ИНФОРМАЦИЯ О ПОЛЬЗОВАТЕЛЕ ===" << std::endl;
+  std::cout << "=== ПОЛЬЗОВАТЕЛЬ ===" << std::endl;
   std::cout << "Имя: " << name << std::endl;
   std::cout << "ID: " << userId << std::endl;
   std::cout << "Список взятых книг: ";
